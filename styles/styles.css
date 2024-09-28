@@ -1,0 +1,226 @@
+/* Importando la fuente */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500&display=swap');
+
+#music-btn {
+  z-index: 1000;  /* Asegura que el botón esté por encima de otros elementos */
+  position: relative;  /* Cambia la posición del botón */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+  text-shadow: 2px 2px 8px rgba(255, 153, 204, 0.7);
+}
+
+.mensaje {
+  text-shadow: 1px 1px 6px rgba(255, 102, 153, 0.5);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdf0f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor centrado */
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 90%;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    color: #ff99cc;
+    margin-bottom: 10px;
+}
+
+.mensaje {
+    font-size: 1.5em;
+    color: #ff6699;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #ffccff;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff99cc;
+}
+
+.imagenes {
+    position: relative;
+    margin-top: 20px;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    animation: fade 4s infinite ease-in-out;
+}
+
+#corazones {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Animación de aparición y desaparición */
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Estilo de los corazones */
+.heart {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    background-color: pink;
+    transform: rotate(45deg);
+    animation: subir 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -12.5px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -12.5px;
+}
+
+@keyframes subir {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Animación adaptada para dispositivos */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+.heart {
+  background-color: pink;
+}
+
+.heart:nth-child(2) {
+  background-color: #ffccff;
+}
+
+.heart:nth-child(3) {
+  background-color: #ffd1dc;
+}
+
+.heart:nth-child(4) {
+  background-color: #ffb3ba;
+}
+
+.heart:nth-child(5) {
+  background-color: #ffdfba;
+}
+
+@keyframes subir {
+  0% {
+      transform: translateY(0) rotate(45deg) scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: translateY(-50vh) rotate(45deg) scale(1.2);
+      opacity: 0.8;
+  }
+  100% {
+      transform: translateY(-100vh) rotate(45deg) scale(1);
+      opacity: 0;
+  }
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; transform: scale(0.9); filter: blur(5px); }
+  50% { opacity: 1; transform: scale(1); filter: blur(0); }
+}
+
+button {
+  background: linear-gradient(135deg, #ff99cc, #ffccff);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #ff6699, #ff99cc);
+  transform: scale(1.05);
+}
+
+body {
+  background: linear-gradient(180deg, #fdf0f6, #ffe6f0);
+  animation: color-change 5s infinite alternate;
+}
+
+@keyframes color-change {
+  0% {
+      background: linear-gradient(180deg, #fdf0f6, #ffe6f0);
+  }
+  100% {
+      background: linear-gradient(180deg, #fce4ec, #fff0f6);
+  }
+}
